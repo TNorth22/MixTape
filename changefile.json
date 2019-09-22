@@ -1,0 +1,27 @@
+[
+    {
+      "type": "ADD_SONG_TO_PLAYLIST",
+      "song": {
+        "id": "6"
+      },
+      "playlist": {
+        "id": "1"
+      }
+    },
+    {
+      "type": "ADD_PLAYLIST_TO_USER",
+      "playlist": {
+        "id": "4",
+        "song_ids": ["13", "4", "15"]
+      },
+      "user": {
+        "id": "5"
+      }
+    },
+    {
+      "type": "REMOVE_PLAYLIST",
+      "playlist": {
+        "id": "3"
+      }
+    }
+]
