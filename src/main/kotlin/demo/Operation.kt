@@ -1,4 +1,4 @@
-package demo
+package demo.mixtape
 
 import com.beust.klaxon.TypeFor
 

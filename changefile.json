@@ -1,27 +1,91 @@
 [
-    {
-      "type": "ADD_SONG_TO_PLAYLIST",
-      "song": {
-        "id": "6"
-      },
-      "playlist": {
-        "id": "1"
-      }
+  {
+    "type":"ADD_SONG_TO_PLAYLIST",
+    "song":{
+      "id":"6"
     },
-    {
-      "type": "ADD_PLAYLIST_TO_USER",
-      "playlist": {
-        "id": "4",
-        "song_ids": ["13", "4", "15"]
-      },
-      "user": {
-        "id": "5"
-      }
-    },
-    {
-      "type": "REMOVE_PLAYLIST",
-      "playlist": {
-        "id": "3"
-      }
+    "playlist":{
+      "id":"1"
     }
+  },
+  {
+    "type":"ADD_SONG_TO_PLAYLIST",
+    "song":{
+      "id":"98"
+    },
+    "playlist":{
+      "id":"1"
+    }
+  },
+  {
+    "type":"ADD_SONG_TO_PLAYLIST",
+    "song":{
+      "id":"6"
+    },
+    "playlist":{
+      "id":"746"
+    }
+  },
+  {
+    "type":"ADD_PLAYLIST_TO_USER",
+    "playlist":{
+      "id":"4",
+      "song_ids":[
+        "13",
+        "4",
+        "15"
+      ]
+    },
+    "user":{
+      "id":"5"
+    }
+  },
+  {
+    "type":"ADD_PLAYLIST_TO_USER",
+    "playlist":{
+      "id":"78",
+      "song_ids":[
+
+      ]
+    },
+    "user":{
+      "id":"5"
+    }
+  },
+  {
+    "type":"ADD_PLAYLIST_TO_USER",
+    "playlist":{
+      "id":"4",
+      "song_ids":[
+        "6"
+      ]
+    },
+    "user":{
+      "id":"5"
+    }
+  },
+  {
+    "type":"ADD_PLAYLIST_TO_USER",
+    "playlist":{
+      "id":"4",
+      "song_ids":[
+
+      ]
+    },
+    "user":{
+      "id":"234"
+    }
+  },
+  {
+    "type":"REMOVE_PLAYLIST",
+    "playlist":{
+      "id":"3"
+    }
+  },
+  {
+    "type":"REMOVE_PLAYLIST",
+    "playlist":{
+      "id":"999"
+    }
+  }
 ]

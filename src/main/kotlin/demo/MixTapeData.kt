@@ -1,4 +1,4 @@
-package demo
+package demo.mixtape
 
 data class MixTapeData(var users: ArrayList<User>, var playlists: ArrayList<Playlist>, var songs: ArrayList<Song>) {
 
