@@ -12,7 +12,7 @@ This project is written in `kotlin` and leverages `gradle` build tools.  As such
 ```
 $ brew install kotlin
 ```
-Or if you aren't down with `homebrew` there's a few alternatives [here](https://kotlinlang.org/docs/tutorials/command-line.html) 
+*Or if you aren't down with `homebrew` there's a few alternatives [here](https://kotlinlang.org/docs/tutorials/command-line.html) 
 
 ## Running the application
 The application takes 3 parameters to run:
@@ -39,7 +39,21 @@ $ java -jar mixtape.jar mixtape.json changefile.json <your_output_file_name.json
 $ ./gradlew run --args='mixtape.json changefile.json <your_output_file_name.json>'
 ```
 
-# Post Mortem
+## Post Mortem
 
+Obviously this solution doesn't scale well.  File I/O is expensive, as is array-based lookups and the footprint of doing everything in memory has the potential to really blow up.
 
+# Solution #1
 
+Lets assume this app has the live offline without any connectivity to the real world.  We could:
+1. Make `mixtape.json` some flavor of a db file (SQLight) allowing for less memory overhead and performant lookups
+2. Chunk up/stream `changefile.json` file reads as we write it into a temp db
+3. Changes could be processed/written one entry at a time via the db for negligable memory footprint
+4. The same iterative approach could be done with the output file - writing one entry at a time, or for less overall fetches we could leverage a paginated solution
+
+# Solution #2
+
+Now assuming the app has internet connectivity.  We could:
+1.  `Mixtape.json` lives in the cloud on a server somewhere
+2.  The client could leverage a sync'ing mechanism to keep its local db when offline.  I'd probably leverage something off the shelf for this like `Firebase NoSQL realtime database`
+3.  Depending on how big the change files are I may even opt to offload the heavy processing to a server somewhere and push the updated mixtape back to the device once complete.
