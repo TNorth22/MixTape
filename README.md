@@ -1,4 +1,4 @@
-## MixTape Demo
+# MixTape Demo
 
 This application is a simple command line playlist demo app that consumes a json playlist, accepts a limited set of operations to be performed and produces an output file.
 
@@ -6,7 +6,7 @@ This application is a simple command line playlist demo app that consumes a json
 
 This project is written in `kotlin` and leverages `gradle` build tools.  As such there are a few things you'll need to get started if you'd like to compile the code.  For convience reasons I've also included a prebuilt executable jar file.  If you'd like to skip to just running the application skip over to _Running the application_.
 
-# Environment Setup
+## Environment Setup
 1.  If for some reason you aren't running some semi-recent version of JRE to get it [here](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 2.  Install `kotlin`
 ```
@@ -29,12 +29,12 @@ currently supported operations which include:
 3.  Remove an existing playlist.
 ```
 
-# Executing from prebuilt jar
+### Executing from prebuilt jar
 ```
 $ java -jar mixtape.jar mixtape.json changefile.json <your_output_file_name.json>
 ```
 
-# Compiling/building via gradle
+### Compiling/building via gradle
 ```
 $ ./gradlew run --args='mixtape.json changefile.json <your_output_file_name.json>'
 ```
@@ -43,7 +43,7 @@ $ ./gradlew run --args='mixtape.json changefile.json <your_output_file_name.json
 
 Obviously this solution doesn't scale paricularly well.  File I/O is expensive, as is array-based lookups and the footprint of doing everything in memory has the potential to blow up and/or really slow down.
 
-# Solution #1
+### Solution #1
 
 Lets assume this app has the live offline without any connectivity to the real world.  We could:
 1. Convert `mixtape.json` to a db file instead of shoving it all into an array allowing for less memory overhead and performant lookups
@@ -51,7 +51,7 @@ Lets assume this app has the live offline without any connectivity to the real w
 3. Changes could be processed/written one entry at a time or paginated in chunks via the db for negligable memory footprint
 4. The same iterative approach could be done with the output file - writing one entry at a time, or for less overall fetches we could leverage a paginated solution
 
-# Solution #2
+### Solution #2
 
 Assuming the app has internet connectivity:
 1.  `Mixtape.json` lives in the cloud
